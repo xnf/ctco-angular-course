@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {RestServiceService} from "./rest-service.service";
-import {IComic, IDisplayComic} from "./icomic";
+import {RestService} from './rest-service.service';
+import {IComic, IDisplayComic} from './icomic';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +12,7 @@ export class AppComponent {
   comics: IDisplayComic[];
   newComic: any = {};
 
-  isSaving: boolean;
-
-  constructor(private srv: RestServiceService) {
+  constructor(private srv: RestService) {
     this.srv.get('comics').then((comics: IDisplayComic[]) => {
       this.comics = comics;
       this.comics[0].show = true;
@@ -25,22 +23,21 @@ export class AppComponent {
     item.show = !item.show;
   }
 
-  addComic(){
+  addComic() {
 
   }
 
   updateComic(comic: IDisplayComic) {
-    this.isSaving = true;
+    comic.isSaving = true;
     this.srv.patch('comics', {
       title: comic.title,
       id: comic.id
     }).then(() => {
-
-      setTimeout(()=>{
-        this.isSaving = false;
+      // Simulating long server call
+      setTimeout(() => {
+        comic.isSaving = false;
         comic.show = false;
-      }, 3000);
-
+      }, 1000);
     });
   }
 

@@ -1,3 +1,19 @@
+# Homework Assignment
+
+1. check out project
+2. install dependencies using `npm install`
+3. Add missing functionality to "Add new comic form". Expected flow:
+
+    3.1. type title for the new comic
+    
+    3.2. press "Add" button
+    
+    3.2. Execute addComic() method on AppComponent class
+    
+    3.4. Make new POST method in the RestService
+    
+4. For a level-up add a new input field for URL
+
 # Comics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.

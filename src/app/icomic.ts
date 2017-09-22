@@ -1,6 +1,7 @@
 
 export interface IDisplayComic extends IComic {
   show?: boolean;
+  isSaving?: boolean;
 }
 
 export interface IComic {

@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {RestServiceService} from "./rest-service.service";
-import {HttpModule} from "@angular/http";
-import {FormsModule} from "@angular/forms";
+import {RestService} from './rest-service.service';
+import {HttpModule} from '@angular/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import {FormsModule} from "@angular/forms";
     HttpModule,
     FormsModule
   ],
-  providers: [RestServiceService],
+  providers: [RestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

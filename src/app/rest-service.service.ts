@@ -6,7 +6,7 @@ import "rxjs/add/operator/toPromise";
 const SERVER_ADDR = 'http://localhost:3000/';
 
 @Injectable()
-export class RestServiceService {
+export class RestService {
 
   constructor(private http: Http) {
 
