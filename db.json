@@ -1,0 +1,102 @@
+{
+  "status": {
+    "up": true
+  },
+  "comics": [
+    {
+      "id": 1,
+      "title": "test for first",
+      "description": {
+        "p": {
+          "img": {
+            "src": "http://www.monkeyuser.com/assets/images/2017/61-web-app-visualized.png",
+            "alt": "Now you can explain your grandma what is that you are doing",
+            "title": "Now you can explain your grandma what is that you are doing"
+          }
+        }
+      },
+      "pubDate": "Tue, 19 Sep 2017 03:00:00 +0300",
+      "link": "http://www.monkeyuser.com/2017/web-app-visualized/",
+      "guid": {
+        "isPermaLink": "true",
+        "text": "http://www.monkeyuser.com/2017/web-app-visualized/"
+      }
+    },
+    {
+      "id": 2,
+      "title": "test",
+      "description": {
+        "p": {
+          "img": {
+            "src": "http://www.monkeyuser.com/assets/images/2017/60-productive-scrum-meetings.png",
+            "alt": "Time's up",
+            "title": "Time's up"
+          }
+        }
+      },
+      "pubDate": "Tue, 12 Sep 2017 03:00:00 +0300",
+      "link": "http://www.monkeyuser.com/2017/productive-scrum-meetings/",
+      "guid": {
+        "isPermaLink": "true",
+        "text": "http://www.monkeyuser.com/2017/productive-scrum-meetings/"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Testing - in a nutshell",
+      "description": {
+        "p": {
+          "img": {
+            "src": "http://www.monkeyuser.com/assets/images/2017/59-testing-in-a-nutshell.png",
+            "alt": "Testing - in a nutshell",
+            "title": "Testing - in a nutshell"
+          }
+        }
+      },
+      "pubDate": "Tue, 22 Aug 2017 03:00:00 +0300",
+      "link": "http://www.monkeyuser.com/2017/testing-in-a-nutshell/",
+      "guid": {
+        "isPermaLink": "true",
+        "text": "http://www.monkeyuser.com/2017/testing-in-a-nutshell/"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Interview vs. Reality",
+      "description": {
+        "p": {
+          "img": {
+            "src": "http://www.monkeyuser.com/assets/images/2017/58-interview-vs-reality.png",
+            "alt": "Be careful on the next interview",
+            "title": "Be careful on the next interview"
+          }
+        }
+      },
+      "pubDate": "Tue, 15 Aug 2017 03:00:00 +0300",
+      "link": "http://www.monkeyuser.com/2017/interview-vs-reality/",
+      "guid": {
+        "isPermaLink": "true",
+        "text": "http://www.monkeyuser.com/2017/interview-vs-reality/"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Future Self",
+      "description": {
+        "p": {
+          "img": {
+            "src": "http://www.monkeyuser.com/assets/images/2017/57-future-self.png",
+            "alt": "Be careful with that last commit. Time travel might be just around the corner",
+            "title": "Be careful with that last commit. Time travel might be just around the corner"
+          }
+        }
+      },
+      "pubDate": "Tue, 08 Aug 2017 03:00:00 +0300",
+      "link": "http://www.monkeyuser.com/2017/future-self/",
+      "guid": {
+        "isPermaLink": "true",
+        "text": "http://www.monkeyuser.com/2017/future-self/"
+      }
+    }
+  ]
+}
