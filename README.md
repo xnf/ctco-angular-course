@@ -2,17 +2,28 @@
 
 1. check out project
 2. install dependencies using `npm install`
-3. Add missing functionality to "Add new comic form". Expected flow:
+3. launch JSON backend server with `json-server db.json`
+4. run CLI dev server with `npm start`
+3. add missing functionality to "Add new comic form". Expected flow:
 
-    3.1. type title for the new comic
+    5.1. type title for the new comic
     
-    3.2. press "Add" button
+    5.2. press "Add" button
     
-    3.2. Execute addComic() method on AppComponent class
+    5.2. Execute addComic() method on AppComponent class
     
-    3.4. Make new POST method in the RestService
+    5.4. Make new POST method in the RestService
     
-4. For a level-up add a new input field for URL
+    5.5. If everything is fine, you will receive REST server response with the new comic
+     
+    5.6. Update list to show the new comic (hint - either call "get" again, reload page or use array method `unshift()`)
+    
+6. For a level-up if it's easy:
+
+    6.1. Add editor for "comic.description.p.img.title"
+    
+    6.2. Add image "comic.description.p.img.src" and "comic.description.p.img.title" for the newComic form
+  
 
 # Comics
 

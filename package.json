@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "rest":"json-server db.json"
+    "rest": "json-server db.json"
   },
   "private": true,
   "dependencies": {
