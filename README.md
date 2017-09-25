@@ -1,33 +1,38 @@
-# Homework Assignment
-
-1. check out project
-2. install dependencies using `npm install`
-3. launch JSON backend server with `json-server db.json`
-4. run CLI dev server with `npm start`
-3. add missing functionality to "Add new comic form". Expected flow:
-
-    5.1. type title for the new comic
-    
-    5.2. press "Add" button
-    
-    5.2. Execute addComic() method on AppComponent class
-    
-    5.4. Make new POST method in the RestService
-    
-    5.5. If everything is fine, you will receive REST server response with the new comic
-     
-    5.6. Update list to show the new comic (hint - either call "get" again, reload page or use array method `unshift()`)
-    
-6. For a level-up if it's easy:
-
-    6.1. Add editor for "comic.description.p.img.title"
-    
-    6.2. Add image "comic.description.p.img.src" and "comic.description.p.img.title" for the newComic form
-  
-
 # Comics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
+
+## Homework Assignment prerequisites
+
+1. clone project or check out latest master.
+2. install dependencies using `npm install`
+3. launch JSON backend server with `json-server db.json` in one process. It must stay up for DB to run.
+4. run CLI dev server with `npm start` in other process. It must stay up for dev rebuilds and live server to workk.
+
+## Homework Assignment
+
+1. Move comics list to own module. Name of the module is up to you. Use ComicsList for example. 
+
+    1.1. generate new module using `ng g module comics-list`
+    
+    1.2. Move HTML from app.component.html
+    
+    1.3. Move comics list related code form app.component.ts
+
+    1.4. app.component.html now should contain only two <app-*> web components. The jumbotron with nested form is already there. 
+    
+2. For a level-up:
+
+    2.1. Move business logic to own - comic list service.
+
+    2.2. Add the new item to existing list. Tip: 
+    
+                    ```
+                    get comics() {
+                        return this.comicsListService.comics
+                    }
+                    
+                    ```
 
 ## Development server
 
