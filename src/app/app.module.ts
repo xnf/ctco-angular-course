@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {RestService} from './rest-service.service';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
+import {JumbotronModule} from "./jumbotron/jumbotron.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    JumbotronModule
   ],
   providers: [RestService],
   bootstrap: [AppComponent]

@@ -29,4 +29,15 @@ export class RestService {
       .toPromise();
   }
 
+
+  post<T>(entity: string, data: any): Promise<T> {
+
+    const patchUrl = SERVER_ADDR + entity ;
+
+    return this.http
+      .post(patchUrl, data)
+      .map(res => res.json())
+      .toPromise();
+  }
+
 }
