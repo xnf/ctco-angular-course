@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {RestService} from './rest-service.service';
 import {IComic, IDisplayComic} from './icomic';
 import {ComicsService} from './comics.service';
+import {Modal} from 'ngx-modal';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import {ComicsService} from './comics.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  @ViewChild('newComicModal') newComicModal: Modal;
 
   comics: IDisplayComic[];
   newComic: any = {title: '', isSaving: false, description: {p: {img: {src: ''}}}};

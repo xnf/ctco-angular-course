@@ -5,23 +5,21 @@ import { AppComponent } from './app.component';
 import {RestService} from './rest-service.service';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
-import {JumbotronModule} from "./jumbotron/jumbotron.module";
+import {JumbotronModule} from './jumbotron/jumbotron.module';
 import {ComicsListModule} from './comics-list/comics-list.module';
 import {ComicsService} from './comics.service';
-import {SharedModule} from './shared/shared.module';
-import { SomethingComponent } from './something/something.component';
+import {ModalModule} from 'ngx-modal';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SomethingComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
     JumbotronModule,
-    SharedModule,
+    ModalModule,
     ComicsListModule
   ],
   providers: [RestService, ComicsService],

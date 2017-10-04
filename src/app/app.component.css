@@ -1,0 +1,18 @@
+button[type="submit"]{
+  transition: all .2s;
+  transition-timing-function: ease-out;
+}
+
+button[type="submit"]:not([disabled]):hover{
+  transform: scale(1.2) rotate(5deg);
+}
+
+input:focus, button:focus {
+  transform: scale(1.1);
+}
+
+
+
+
+
+

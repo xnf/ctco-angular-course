@@ -3,9 +3,22 @@
   <h1>{{titleAttribute}}</h1>
   <p>{{descriptionAttribute}}</p>
   <p>
-    <button class="btn btn-primary" (click)="onClick()">{{buttonLabelAttribute}}</button>
+    <button class="btn btn-primary" (click)="newComicModal.open()">{{buttonLabelAttribute}}</button>
   </p>
 
   <ng-content></ng-content>
 
 </div>
+
+<modal #newComicModal>
+  <modal-header>
+    <h1>New Comic</h1>
+  </modal-header>
+  <modal-content>
+    Put "new comic" component here
+  </modal-content>
+  <modal-footer>
+    <button class="btn btn-primary btn-sm pull-left" (click)="newComicModal.close()">close</button>
+    <button class="btn btn-success pull-right">Add goes here</button>
+  </modal-footer>
+</modal>

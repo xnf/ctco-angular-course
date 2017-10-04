@@ -11,28 +11,36 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Homework Assignment
 
-1. Move comics list to own module. Name of the module is up to you. Use ComicsList for example. 
+1. "Show upload form" button is broken now and shows modal popup instead of new form. 
 
-    1.1. generate new module using `ng g module comics-list`
+    1.1. Move "new comic" form to the modal popup. 
     
-    1.2. Move HTML from app.component.html
+    1.2. Close the popup after new comic was added. 
+         Tip: use this to access modal in code
+         
+         @ViewChild('newComicModal') newComicModal: Modal
+         // ...
+            this.newComicModal.close()
+         // ...
+          
+2. Add "required" to the "image url" field as well.
     
-    1.3. Move comics list related code form app.component.ts
+    2.1. Display "Please specify image url" when field is pristine
+    
+    2.2. Display error message "Image url is required!" when field was touched and is still invalid
 
-    1.4. app.component.html now should contain only two <app-*> web components. The jumbotron with nested form is already there. 
-    
-2. For a level-up:
+    2.3. Set button class to "btn-default" when form is not valid and to 'btn-success' when form is valid
 
-    2.1. Move business logic to own - comic list service.
+3. Move "Add new" to own component. You may put it same "comics-list" module that was created in last homework. 
 
-    2.2. Add the new item to existing list. Tip: 
+    3.1. generate new component using `ng g c add-comic-form`
     
-                    ```
-                    get comics() {
-                        return this.comicsListService.comics
-                    }
-                    
-                    ```
+    3.2. Move HTML from app.component.html
+    
+    3.3. Move comics creation related code form app.component.ts
+
+    3.4. app.component.html now should contain only jumbotron, comic list and this new component
+    
 
 ## Development server
 

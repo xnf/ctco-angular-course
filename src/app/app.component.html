@@ -4,25 +4,42 @@
                [label]="jumbotronConfig.buttonLabel">
 
 
-  <form #newComicForm="ngForm">
+  <form #newComicForm="ngForm" (submit)="addComic(newComic)">
     <div class="well well-sm" *ngIf="showNewComicForm">
       <h3>New Comic</h3>
-      <div class="form-group">
+
+      <div class="form-group has-feedback" [class.has-error]="title.invalid&&(title.dirty||title.touched)">
+
+        <label class="control-label">Title:</label>
         <input
+          required
           #title="ngModel"
           name="title"
           type="text"
           class="form-control"
           [(ngModel)]="newComic.title"
           placeholder="Enter title here">
+
+        <div class="text-muted" *ngIf="title.untouched">
+          This field is mandatory
+        </div>
+
+        <div class="text-danger" *ngIf="title.invalid&&(title.dirty||title.touched)">
+          Name is required!
+        </div>
+
       </div>
+
       <div class="form-group">
         <input type="text"
                name="imageUrl"
                class="form-control" [(ngModel)]="newComic.description.p.img.src" placeholder="Enter image url here">
       </div>
+
       <div class="form-group">
-        <button class="btn btn-success" type="button" (click)="addComic(newComic)">
+        <button
+          [disabled]="newComicForm.invalid"
+          class="btn btn-success" type="submit">
           <span *ngIf="!newComic.isSaving">Add</span>
           <span *ngIf="newComic.isSaving">Adding</span>
         </button>
@@ -33,6 +50,5 @@
 
 </app-jumbotron>
 
-<!--<app-comics-list></app-comics-list>-->
-<!--<app-spinner></app-spinner>-->
+
 <app-comics-list></app-comics-list>
