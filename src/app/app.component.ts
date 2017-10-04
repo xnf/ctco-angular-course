@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {RestService} from './rest-service.service';
 import {IComic, IDisplayComic} from './icomic';
+import {ComicsService} from './comics.service';
 
 @Component({
   selector: 'app-root',
@@ -17,28 +18,21 @@ export class AppComponent {
     description: 'Hi! Welcome to the comics world!',
     buttonLabel: 'Show upload form',
     buttonClick: () => {
-      this.jumbotronConfig.buttonLabel = 'Hide upload form';
-      this.showNewComicForm = true
+      this.showNewComicForm = !this.showNewComicForm;
+      this.jumbotronConfig.buttonLabel = this.showNewComicForm ? 'Hide upload form' : 'Show upload form';
+      window.localStorage.setItem('showNewComicForm', String(this.showNewComicForm));
     }
   };
 
-  showNewComicForm = false;
+  showNewComicForm = window.localStorage.getItem('showNewComicForm') === 'true';
 
-  constructor(private srv: RestService) {
-    this.srv.get('comics').then((comics: IDisplayComic[]) => {
-      comics.reverse();
-      this.comics = comics;
-      this.comics[0].show = true;
-    });
-  }
+  constructor(private restService: RestService, private comicsService: ComicsService) {
 
-  showDescription(item: IDisplayComic) {
-    item.show = !item.show;
   }
 
   addComic(comic: IDisplayComic) {
     comic.isSaving = true;
-    this.srv.post<IDisplayComic>('comics', {
+    this.restService.post<IDisplayComic>('comics', {
       description: {p: {img: {src: comic.description.p.img.src}}},
       title: comic.title
     }).then((newComicEntityFromBackend) => {
@@ -46,14 +40,14 @@ export class AppComponent {
       setTimeout(() => {
         comic.isSaving = false;
         comic.show = false;
-        this.comics.unshift(newComicEntityFromBackend)
+        this.comicsService.comics.unshift(newComicEntityFromBackend)
       }, 1000);
     });
   }
 
   updateComic(comic: IDisplayComic) {
     comic.isSaving = true;
-    this.srv.patch<IDisplayComic>('comics', {
+    this.restService.patch<IDisplayComic>('comics', {
       title: comic.title,
       id: comic.id
     }).then(() => {

@@ -6,18 +6,25 @@ import {RestService} from './rest-service.service';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {JumbotronModule} from "./jumbotron/jumbotron.module";
+import {ComicsListModule} from './comics-list/comics-list.module';
+import {ComicsService} from './comics.service';
+import {SharedModule} from './shared/shared.module';
+import { SomethingComponent } from './something/something.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SomethingComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    JumbotronModule
+    JumbotronModule,
+    SharedModule,
+    ComicsListModule
   ],
-  providers: [RestService],
+  providers: [RestService, ComicsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

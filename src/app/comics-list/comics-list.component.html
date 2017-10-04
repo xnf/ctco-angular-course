@@ -1,0 +1,40 @@
+<div *ngFor="let comic of getComics()" class="well well-sm">
+
+  <a class="pull-right btn btn-xs btn-default" href="{{comic.link}}" target="_blank">
+    Original Link
+  </a>
+
+  <a class="pull-right btn btn-xs btn-default" (click)="showDescription(comic)">
+    <span *ngIf="!comic.show">Show Description</span>
+    <span *ngIf="comic.show">Hide Description</span>
+  </a>
+
+  <h5> {{comic.title}}</h5>
+
+  <div *ngIf="comic.show" class="alert alert-info">
+    <div class="row">
+      <div class="col-sm-6">
+        <p>
+          {{comic.description.p.img.title}}
+        </p>
+        <p>
+          <img [src]="comic.description.p.img.src">
+        </p>
+      </div>
+      <div class="col-sm-6">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="comic.title" placeholder="Enter title here">
+          <span class="input-group-btn">
+            <button class="btn btn-success" [disabled]="comic.isSaving" type="button" (click)="updateComic(comic)">
+              <span *ngIf="!comic.isSaving">Update</span>
+              <span *ngIf="comic.isSaving">Saving</span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
